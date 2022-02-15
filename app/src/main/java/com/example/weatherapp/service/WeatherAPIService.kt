@@ -7,20 +7,18 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
-class WeatherAPIService {
+object WeatherAPIService {
 
     //https://api.hgbrasil.com/weather?woeid=455827
 
-    private val BASE_URL = "https://api.hgbrasil.com/"
-    private val api = Retrofit.Builder()
-        .baseUrl(BASE_URL)
-        .addConverterFactory(GsonConverterFactory.create())
-        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-        .build()
-        .create(WeatherAPI::class.java)
+        val BASE_URL = "https://api.hgbrasil.com/"
 
-        fun getDataService(): Single<WeatherModel>{
-            return api.getData()
+        fun getInstance() : Retrofit{
+            return Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
         }
+
 
 }

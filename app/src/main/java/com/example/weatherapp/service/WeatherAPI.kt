@@ -4,6 +4,7 @@ import com.example.weatherapp.model.WeatherModel
 import com.google.android.material.datepicker.SingleDateSelector
 import io.reactivex.Single
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.http.GET
 
 
@@ -12,6 +13,6 @@ import retrofit2.http.GET
 interface WeatherAPI {
 
     @GET("weather?woeid=455827")
-    fun getData(): Single<WeatherModel>
+    fun getWeather(): Response<WeatherModel>
 
 }

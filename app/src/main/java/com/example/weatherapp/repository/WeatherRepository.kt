@@ -1,24 +1,38 @@
-package com.example.weatherapp.viewmodel
+package com.example.weatherapp.repository
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.example.weatherapp.model.WeatherModel
-import com.example.weatherapp.service.WeatherAPIService
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.observers.DisposableSingleObserver
-import io.reactivex.schedulers.Schedulers
-import java.util.concurrent.ScheduledFuture
+import com.example.weatherapp.service.WeatherAPI
 
-class MainViewModel: ViewModel(){
 
-    private val weatherAPIService = WeatherAPIService()
-    private val disposable = CompositeDisposable()
+class WeatherRepository(private val apiInterface: WeatherAPI){
 
-    val waether_data = MutableLiveData<WeatherModel>()
-    val waether_error = MutableLiveData<Boolean>()
-    val waether_load = MutableLiveData<Boolean>()
+    private val waetherLiveData = MutableLiveData<WeatherModel>()
 
+    val results : LiveData<WeatherModel>
+    get() = waetherLiveData
+
+    fun getWeather(){
+        val result = WeatherAPI.getWeather()
+        if (result.body() != null){
+            waetherLiveData.postValue(result.body())
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
     fun refreshData(){
         getDataFromAPI()
         //getDataFromLocal()
@@ -45,6 +59,6 @@ class MainViewModel: ViewModel(){
 
                 })
         )
-    }
+    }*/
 
 }
