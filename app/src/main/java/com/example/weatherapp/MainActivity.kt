@@ -22,12 +22,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val apiInterface = WeatherAPIService.getInstance().create(WeatherAPI::class.java)
+        //val apiInterface = WeatherAPIService.getInstance().create(WeatherAPI::class.java)
 
-        val weatherRepository = WeatherRepository(apiInterface)
+        //val weatherRepository = WeatherRepository(apiInterface)
 
         //viewModel = ViewModelProviders.of(this, factory)[MapViewModel::class.java]
-        viewModel = ViewModelProvider(this).get(WeatherViewModel::class.java)
+        //viewModel = ViewModelProvider(this).get(WeatherViewModel::class.java)
 
         }
 }
