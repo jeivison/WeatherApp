@@ -16,7 +16,7 @@ import retrofit2.create
 class MainActivity : AppCompatActivity() {
 
 
-    private lateinit var weatherViewModel: WeatherViewModel
+    private lateinit var viewModel: WeatherViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         val weatherRepository = WeatherRepository(apiInterface)
 
         //viewModel = ViewModelProviders.of(this, factory)[MapViewModel::class.java]
-        weatherViewModel = ViewModelProviders.of(this, (weatherRepository)).get()
+        viewModel = ViewModelProvider(this).get(WeatherViewModel::class.java)
 
         }
 }
