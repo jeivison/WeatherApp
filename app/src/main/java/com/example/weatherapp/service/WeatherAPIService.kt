@@ -9,7 +9,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
 
-object WeatherAPIService {
+class WeatherAPIService {
 
     //https://api.hgbrasil.com/weather?woeid=455827
 
@@ -20,8 +20,6 @@ object WeatherAPIService {
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()
             .create(WeatherAPI::class.java)
-
-
 
     /*
         fun getInstance() : Retrofit{
