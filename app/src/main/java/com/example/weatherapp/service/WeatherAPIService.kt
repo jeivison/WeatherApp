@@ -1,16 +1,18 @@
 package com.example.weatherapp.service
 
+import com.example.weatherapp.model.Results
 import com.example.weatherapp.model.WeatherModel
 import io.reactivex.Single
-import retrofit2.CallAdapter
-import retrofit2.Response
-import retrofit2.Retrofit
+import retrofit2.*
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
+import retrofit2.http.GET
 
-class WeatherAPIService {
+interface WeatherAPIService {
     //https://api.hgbrasil.com/weather?woeid=455827
+
+    @GET("weather?woeid=455827")
+    fun getWeather(): Call<List<Results>>
 
     companion object {
 
@@ -23,11 +25,9 @@ class WeatherAPIService {
             retrofit.create(WeatherAPIService::class.java)
         }
 
-
-        fun getDataService(): WeatherAPIService {
+        fun getInstance(): WeatherAPIService{
             return WeatherAPIService
         }
-
 
     }
 }

@@ -1,9 +1,9 @@
 package com.example.weatherapp.repository
 
-import com.example.weatherapp.service.WeatherAPI
+import com.example.weatherapp.service.WeatherAPIService
 
-class MainRepository constructor(private val weatherAPI: WeatherAPI){
-    fun getWeather() = weatherAPI.getWeather()
+class MainRepository(private val weatherAPIService: WeatherAPIService){
+    fun getWeather() = weatherAPIService.getWeather()
 }
 
 
