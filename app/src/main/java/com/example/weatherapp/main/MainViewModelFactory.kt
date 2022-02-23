@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.weatherapp.repository.MainRepository
 
+@Suppress("UNCHECKED_CAST")
 class MainViewModelFactory constructor(private val repository: MainRepository) : ViewModelProvider.Factory {
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {

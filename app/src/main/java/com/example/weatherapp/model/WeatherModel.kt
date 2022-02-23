@@ -4,12 +4,30 @@ package com.example.weatherapp.model
 import com.google.gson.annotations.SerializedName
 
 data class WeatherModel(
-    val `by`: String,
-    @SerializedName("execution_time")
-    val executionTime: Double,
-    @SerializedName("from_cache")
-    val fromCache: Boolean,
-    val results: Results,
-    @SerializedName("valid_key")
-    val validKey: Boolean
+    @SerializedName("base")
+    val base: String,
+    @SerializedName("clouds")
+    val clouds: Clouds,
+    @SerializedName("cod")
+    val cod: Int,
+    @SerializedName("coord")
+    val coord: Coord,
+    @SerializedName("dt")
+    val dt: Int,
+    @SerializedName("id")
+    val id: Int,
+    @SerializedName("main")
+    val main: Main,
+    @SerializedName("name")
+    val name: String,
+    @SerializedName("sys")
+    val sys: Sys,
+    @SerializedName("timezone")
+    val timezone: Int,
+    @SerializedName("visibility")
+    val visibility: Int,
+    @SerializedName("weather")
+    val weather: List<Weather>,
+    @SerializedName("wind")
+    val wind: Wind
 )

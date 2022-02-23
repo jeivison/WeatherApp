@@ -3,33 +3,35 @@ package com.example.weatherapp.main
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.weatherapp.model.Results
 import com.example.weatherapp.repository.MainRepository
 import retrofit2.Call
+import retrofit2.Callback
 import retrofit2.Response
 
 
 class WeatherViewModel constructor(private val repository: MainRepository) : ViewModel(){
 
-        val resultsLiveData = MutableLiveData<List<Results>>()
+        val resultsLiveData = MutableLiveData<List<WeatherModel>>()
         val errorMessage = MutableLiveData<String>()
 
         fun getWeather() {
 
             val request = repository.getWeather()
-            request.enqueue(object : retrofit2.Callback<List<Results>> {
-                override fun onResponse(call: Call<List<Results>>,response: Response<List<Results>>) {
+            request.enqueue(object : Callback<List<WeatherModel>> {
+                override fun onResponse(call: Call<List<WeatherModel>>,response: Response<List<WeatherModel>>) {
                     //Quando houver uma resposta
                     resultsLiveData.postValue(response.body())
                 }
 
-                override fun onFailure(call: Call<List<Results>>, t: Throwable) {
+                override fun onFailure(call: Call<List<WeatherModel>>, t: Throwable) {
                     errorMessage.postValue(t.message)
                 }
             })
         }
 
 }
+
+
 
 
 /*
