@@ -2,30 +2,23 @@ package com.example.weatherapp.service
 
 import retrofit2.*
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.GET
 
-interface WeatherAPIService {
-    //https://api.hgbrasil.com/weather?woeid=455827
-    //https://api.hgbrasil.com/weather?key=a30a6ec9
 
-    @GET("/weather?key=a30a6ec9")
-    fun getWeather(): Call<List<WeatherModel>>
+object WeatherAPIService {
 
-    companion object {
+        const val BASE_URL = "https://api.hgbrasil.com"
 
-        private val WeatherAPIService : WeatherAPIService by lazy {
-            val retrofit = Retrofit.Builder()
-                .baseUrl("https://api.hgbrasil.com/")
+        private val retrofit  by lazy {
+                 Retrofit.Builder()
+                .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
 
-            retrofit.create(WeatherAPIService::class.java)
         }
 
-        fun getInstance(): WeatherAPIService{
-            return WeatherAPIService
+        val api : ServiceAPI by lazy {
+            retrofit.create(ServiceAPI::class.java)
         }
 
-    }
 }
 
