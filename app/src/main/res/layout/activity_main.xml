@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3A4DB1"
+    android:background="@drawable/background"
     android:orientation="vertical"
     android:padding="25dp"
     tools:context=".MainActivity">
@@ -74,9 +74,8 @@
                     android:id="@+id/temp_min"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    android:text="Min_temp">
-                </TextView>
+                    android:text="Min_temp"
+                    android:textSize="18sp"></TextView>
 
                 <Space
                     android:layout_width="50dp"
@@ -86,8 +85,8 @@
                     android:id="@+id/temp_max"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    android:text="Max_Temp">
+                    android:text="Max_Temp"
+                    android:textSize="18sp">
 
                 </TextView>
             </LinearLayout>
