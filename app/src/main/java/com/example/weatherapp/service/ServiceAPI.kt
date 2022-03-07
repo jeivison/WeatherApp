@@ -5,7 +5,6 @@ import com.example.weatherapp.model.WeatherData
 import retrofit2.http.GET
 
 interface ServiceAPI {
-    //https://api.hgbrasil.com/weather?woeid=455827
     //https://api.hgbrasil.com/weather?key=a30a6ec9
 
     @GET("/weather?key=a30a6ec9")
