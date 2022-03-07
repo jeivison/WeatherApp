@@ -19,6 +19,6 @@ Um aplicativo Android onde você pode verificar o clima da cidade que deseja e v
 7- LiveData
 
 <div>
-<img height="800em" src="https://github.com/jeivison/WeatherApp/blob/master/Screenshot_20220307_124701.png"/>
+<img height="600em" src="https://github.com/jeivison/WeatherApp/blob/master/Screenshot_20220307_124701.png"/>
 </div>
 
