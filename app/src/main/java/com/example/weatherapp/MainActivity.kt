@@ -3,16 +3,11 @@ package com.example.weatherapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.lifecycle.ViewModelProvider
 import com.example.weatherapp.databinding.ActivityMainBinding
 import com.example.weatherapp.main.ViewModelFactory
 import com.example.weatherapp.main.WeatherViewModel
-import com.example.weatherapp.model.Forecast
-import com.example.weatherapp.model.WeatherData
 import com.example.weatherapp.repository.MainRepository
-import org.w3c.dom.Text
-import kotlin.math.max
 
 
 class MainActivity : AppCompatActivity() {
